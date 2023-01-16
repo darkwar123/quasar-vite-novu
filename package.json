@@ -13,7 +13,6 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@novu/notification-center": "^0.10.2",
     "@novu/notification-center-vue": "^0.10.2",
     "@quasar/extras": "^1.0.0",
     "@vueuse/core": "^9.10.0",

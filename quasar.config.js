@@ -15,60 +15,40 @@ module.exports = configure(function (/* ctx */) {
   return {
     eslint: {
       warnings: true,
-      errors: true
+      errors: true,
     },
-    boot: [
-      'novu',
-    ],
-    css: [
-      'app.scss'
-    ],
-    extras: [
-      'roboto-font',
-      'material-icons',
-    ],
+    boot: ['novu'],
+    css: ['app.scss'],
+    extras: ['roboto-font', 'material-icons'],
     build: {
       target: {
-        browser: [ 'es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1' ],
-        node: 'node16'
+        browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
+        node: 'node16',
       },
       vueRouterMode: 'hash',
-      viteVuePluginOptions: {
-        template: {
-          compilerOptions: {
-            // Important! Tell vite that notification-center-web-component is custom web component, non-vue
-            isCustomElement: (tag) => {
-              return tag.includes('notification-center-web-component')
-                || tag.includes('notification-center-component-content');
-            },
-          },
-        },
-      },
       vitePlugins: [
         // Important! Attach import react from "react" to window.React, react-dom same
         createExternal({
           externals: {
             react: 'React',
             ['react-dom']: 'ReactDOM',
-          }
-        })
-      ]
+          },
+        }),
+      ],
     },
     devServer: {
-      open: false
+      open: false,
     },
     framework: {
       config: {},
-      plugins: []
+      plugins: [],
     },
     animations: [],
     ssr: {
       pwa: false,
       prodPort: 3000,
 
-      middlewares: [
-        'render'
-      ]
+      middlewares: ['render'],
     },
     pwa: {
       workboxMode: 'generateSW',
@@ -79,7 +59,7 @@ module.exports = configure(function (/* ctx */) {
     },
     cordova: {},
     capacitor: {
-      hideSplashscreen: true
+      hideSplashscreen: true,
     },
     electron: {
       inspectPort: 5858,
@@ -88,13 +68,11 @@ module.exports = configure(function (/* ctx */) {
       packager: {},
 
       builder: {
-        appId: 'quasar-vite-novu'
-      }
+        appId: 'quasar-vite-novu',
+      },
     },
     bex: {
-      contentScripts: [
-        'my-content-script'
-      ],
-    }
-  }
+      contentScripts: ['my-content-script'],
+    },
+  };
 });
