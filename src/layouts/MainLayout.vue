@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -10,14 +10,11 @@
 import { defineComponent, ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
 
-
 export default defineComponent({
   name: 'MainLayout',
 
-  setup () {
-
-    return {
-    }
-  }
+  setup() {
+    return {};
+  },
 });
 </script>
