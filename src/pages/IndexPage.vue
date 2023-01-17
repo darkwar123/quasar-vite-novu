@@ -29,7 +29,11 @@ export default defineComponent({
     const webComponentEl = ref<HTMLElement | null>(null);
 
     const toggle = () => {
-      webComponentEl.value?.querySelector('button')?.click();
+      webComponentEl.value?.querySelector('button')?.dispatchEvent(new MouseEvent("click", {
+          "view": window,
+          "bubbles": true,
+          "cancelable": false
+        }));;
     };
 
     return { webComponentEl, toggle, appid, subscriberId };
